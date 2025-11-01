@@ -1,0 +1,4 @@
+sudo apt update
+sudo apt install build-essential
+gcc q1.c -o q1
+./q1
