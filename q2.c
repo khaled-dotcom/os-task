@@ -46,16 +46,14 @@ int main() {
         }
     }
 
-    // Parent: wait for all 3 children to finish
     for (int i = 0; i < 3; ++i) {
         int status;
         pid_t w = waitpid(pids[i], &status, 0);
         if (w == -1) {
             perror("waitpid");
-        } else {
-            // Optional: show exit status
+        } else
             if (WIFEXITED(status))
-                ; // printf("Child %d exited with %d\n", (int)w, WEXITSTATUS(status));
+                ; 
         }
     }
 
